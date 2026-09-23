@@ -4,78 +4,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>מדיניות פרטיות - לוח טהרה (Privacy Policy)</title>
-  <link rel="icon" type="image/png" href="./icon.png">
-  <link rel="stylesheet" href="./style.css">
-  
-  <script>
-    (function() {
-      try {
-        var theme = localStorage.getItem('taharah_theme');
-        if (theme === 'dark' || theme === 'light') {
-          document.documentElement.setAttribute('data-theme', theme);
-        }
-      } catch (e) {}
-    })();
-  </script>
+  <style>
+    :root {
+      --primary: #4a6fa5;
+      --primary-dark: #355380;
+      --primary-light: #eef2f7;
+      --text: #2d3748;
+      --text-muted: #718096;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --notice-bg: #eff6ff;
+      --notice-border: #bfdbfe;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-align: center;
+      padding: 45px 20px 30px;
+    }
+
+    header h1 { font-size: 2.2rem; margin-bottom: 8px; font-weight: 700; }
+    header p { opacity: 0.9; font-size: 1.05rem; }
+
+    .nav-bar {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .nav-bar a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      margin: 28px 0 14px;
+      border-bottom: 2px solid #edf2f7;
+      padding-bottom: 8px;
+    }
+    h2:first-of-type { margin-top: 0; }
+
+    h3 {
+      color: var(--primary-dark);
+      font-size: 1.2rem;
+      margin: 20px 0 10px;
+    }
+
+    p { margin-bottom: 14px; font-size: 1.05rem; }
+    ul { margin: 12px 24px 18px 0; }
+    li { margin-bottom: 8px; font-size: 1rem; }
+
+    .notice-box {
+      background: var(--notice-bg);
+      border: 1px solid var(--notice-border);
+      border-right: 4px solid var(--primary);
+      padding: 18px 20px;
+      border-radius: 8px;
+      margin: 22px 0;
+    }
+
+    .en-section {
+      direction: ltr;
+      text-align: left;
+      margin-top: 45px;
+      border-top: 3px dashed #cbd5e1;
+      padding-top: 35px;
+    }
+
+    .en-section ul { margin: 12px 0 18px 24px; }
+    .en-section .notice-box {
+      border-right: 1px solid var(--notice-border);
+      border-left: 4px solid var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+
+    footer a { color: var(--primary); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
 
-  <!-- Header & Navigation -->
-  <header class="header">
-    <div class="nav-container">
-      <a href="./index.html" class="brand">
-        <img src="./icon.png" alt="לוגו לוח טהרה" class="brand-icon">
-        <span class="brand-title">לוח טהרה</span>
-      </a>
-
-      <div class="nav-actions">
-        <!-- Theme Switcher -->
-        <div class="theme-switch" role="group" aria-label="בחירת ערכת נושא">
-          <button type="button" class="theme-btn active" data-theme-value="system" title="מערכת (אוטומטי)" aria-label="מערכת">
-            <svg class="svg-icon" viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-          </button>
-          <button type="button" class="theme-btn" data-theme-value="light" title="מצב בהיר" aria-label="בהיר">
-            <svg class="svg-icon" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-          </button>
-          <button type="button" class="theme-btn" data-theme-value="dark" title="מצב כהה" aria-label="כהה">
-            <svg class="svg-icon" viewBox="0 0 24 24">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
-        </div>
-
-        <a href="./index.html" class="nav-link">
-          <svg class="svg-icon" viewBox="0 0 24 24">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          <span>דף הבית</span>
-        </a>
-      </div>
-    </div>
+  <header>
+    <h1>מדיניות פרטיות / Privacy Policy</h1>
+    <p>לוח טהרה (Taharah Board) — עודכן לאחרונה: ספטמבר 2026</p>
   </header>
 
-  <main class="page-container">
-    <div class="content-card">
-      <div class="page-header">
-        <h1 class="page-title">מדיניות פרטיות / Privacy Policy</h1>
-        <p>לוח טהרה (Taharah Board) — עודכן לאחרונה: ספטמבר 2026</p>
-      </div>
+  <div class="container">
+    <div class="nav-bar">
+      <span><strong>לוח טהרה</strong></span>
+      <a href="./index.html">← חזרה לדף הבית</a>
+    </div>
 
+    <div class="card" style="margin-top: 20px;">
       <h2>1. מבוא ועקרונות יסוד</h2>
       <p>
         אפליקציית <strong>"לוח טהרה" (Taharah Board)</strong> מעמידה בראש סדר העדיפויות את פרטיות המשתמשים ואת אבטחת המידע הרגיש.
@@ -87,7 +151,6 @@
       <p>
         האפליקציה מציעה חיבור אופציונלי לחשבון Google האישי של המשתמש. השימוש בשירותי Google מתבצע באופן ישיר בין מכשיר המשתמש לבין שרתי Google, ללא מעבר בשרתים מתווכים, עבור המטרות הבאות בלבד:
       </p>
-
       <ul>
         <li>
           <strong>Google Drive API (הרשאת <code>drive.file</code>):</strong>
@@ -102,17 +165,15 @@
       </ul>
 
       <h2>3. אי-שיתוף מידע והגבלת שימוש</h2>
-      <p>
-        אנו מתחייבים באופן חד-משמעי:
-      </p>
+      <p>אנו מתחייבים באופן חד-משמעי:</p>
       <ul>
         <li>נתוני המשתמש אינם מועברים, אינם נמכרים ואינם משותפים עם שום גורם שלישי.</li>
         <li>נתוני Google אינם משמשים להצגת פרסומות, למיקוד שיווקי, לכריית מידע או לאימון מודלים של בינה מלאכותית (AI).</li>
         <li>המידע אינו נשמר באף מסד נתונים חיצוני שאינו החשבון האישי של המשתמש עצמו.</li>
       </ul>
 
-      <h2>4. אבטחת מידע ומנגנוני הגנה על נתונים רגישים (Data Protection Mechanisms)</h2>
-      <p>כדי להבטיח את פרטיות המשתמשים וההגנה על נתונים רגישים, האפליקציה מיישמת מנגנוני אבטחה מתקדמים לפי התקנים המחמירים ביותר:</p>
+      <h2>4. אבטחת מידע ומנגנוני הגנה על נתונים רגישים (Data Protection)</h2>
+      <p>כדי להבטיח את פרטיות המשתמשים וההגנה על נתונים רגישים, האפליקציה מיישמת מנגנוני אבטחה מתקדמים לפי התקנים המחמירים ביותר בתעשייה:</p>
       <ul>
         <li><strong>הצפנת נתונים בתעבורה (In Transit):</strong> כל התקשורת מול ממשקי ה-API של Google מתבצעת אך ורק דרך ערוצי רשת מוצפנים ומאובטחים בפרוטוקול HTTPS בתקן TLS 1.2 ומעלה, המונע יירוט או האזנה למידע ברשת.</li>
         <li><strong>הצפנת טוקנים והרשאות במנוחה (At Rest):</strong> טוקני הגישה והרענון של Google אינם נשמרים כטקסט גלוי, אלא מוצפנים מקומית במחשב המשתמש באמצעות מנגנוני ההצפנה המאובטחים של מערכת ההפעלה (Electron <code>safeStorage</code>, המשתמש ב-DPAPI של Windows / Keychain של macOS).</li>
@@ -121,9 +182,7 @@
       </ul>
 
       <h2>5. ניתוק חשבון ומחיקת נתונים</h2>
-      <p>
-        המשתמש שולט באופן מלא בחיבור לחשבון Google ובמידע שלו:
-      </p>
+      <p>המשתמש שולט באופן מלא בחיבור לחשבון Google ובמידע שלו:</p>
       <ul>
         <li>ניתן לנתק את החשבון בכל עת דרך מסך ההגדרות באפליקציה ("נתק חשבון גוגל"). בעת הניתוק, כל טוקני הגישה נמחקים מיידית מהמחשב.</li>
         <li>ניתן להסיר את הרשאות האפליקציה ישירות דרך הגדרות האבטחה של חשבון Google בכתובת: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</li>
@@ -203,21 +262,15 @@
       </div>
 
     </div>
-  </main>
+  </div>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div>
-        <span>לוח טהרה &copy; 2026</span>
-      </div>
-      <div class="footer-links">
-        <a href="./index.html" class="footer-link">דף הבית</a>
-        <a href="./terms.html" class="footer-link">תנאי שימוש</a>
-        <a href="https://github.com/Lev-Good/Purification-board" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-      </div>
-    </div>
+  <footer>
+    <p>&copy; 2026 לוח טהרה (Taharah Board). כל הזכויות שמורות.</p>
+    <p style="margin-top: 8px;">
+      <a href="./index.html">דף הבית (Home)</a> | 
+      <a href="./terms.html">תנאי שימוש (Terms of Service)</a>
+    </p>
   </footer>
 
-  <script src="./script.js"></script>
 </body>
 </html>
